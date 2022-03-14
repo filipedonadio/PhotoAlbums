@@ -14,7 +14,7 @@ struct AlbumsView: View {
         NavigationView {
             List(albumsViewModel.albums) { album in
                 NavigationLink {
-                    Text("Navigate to Album details")
+                    AlbumDetails(cachedAlbum: album)
                 } label: {
                     HStack {
                         if album.isFavorite {

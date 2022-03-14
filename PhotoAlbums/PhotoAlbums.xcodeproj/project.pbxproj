@@ -25,6 +25,7 @@
 		5AF9539627DF386500D8D1A2 /* CachedAlbum+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9539427DF386500D8D1A2 /* CachedAlbum+CoreDataProperties.swift */; };
 		5AF9539827DF390E00D8D1A2 /* AlbumsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9539727DF390E00D8D1A2 /* AlbumsStorage.swift */; };
 		5AF9539C27DF3AC600D8D1A2 /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9539B27DF3AC600D8D1A2 /* AlbumsViewModel.swift */; };
+		5AF9539E27DF40A600D8D1A2 /* AlbumDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9539D27DF40A600D8D1A2 /* AlbumDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		5AF9539427DF386500D8D1A2 /* CachedAlbum+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedAlbum+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5AF9539727DF390E00D8D1A2 /* AlbumsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsStorage.swift; sourceTree = "<group>"; };
 		5AF9539B27DF3AC600D8D1A2 /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
+		5AF9539D27DF40A600D8D1A2 /* AlbumDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				5AF9536F27DF307C00D8D1A2 /* ContentView.swift */,
 				5AF9537B27DF34C700D8D1A2 /* AlbumsView.swift */,
+				5AF9539D27DF40A600D8D1A2 /* AlbumDetails.swift */,
 				5AF9537D27DF34D800D8D1A2 /* FavoritesView.swift */,
 			);
 			path = Views;
@@ -235,6 +238,7 @@
 				5AF9538E27DF36DB00D8D1A2 /* Endpoint.swift in Sources */,
 				5AF9537C27DF34C700D8D1A2 /* AlbumsView.swift in Sources */,
 				5AF9539527DF386500D8D1A2 /* CachedAlbum+CoreDataClass.swift in Sources */,
+				5AF9539E27DF40A600D8D1A2 /* AlbumDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

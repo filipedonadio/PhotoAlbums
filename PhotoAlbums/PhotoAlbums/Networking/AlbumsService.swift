@@ -9,7 +9,7 @@ import Foundation
 
 protocol AlbumsServiceable {
     func fetchAlbums() async throws -> Result<[Album], RequestError>
-    func fetchPhotos(albumId: Int) async throws -> Result<[Photo], RequestError>
+    func fetchPhotos(albumId: Int16) async throws -> Result<[Photo], RequestError>
 }
 
 class AlbumsService: HTTPClient, AlbumsServiceable {
@@ -17,7 +17,7 @@ class AlbumsService: HTTPClient, AlbumsServiceable {
         try await sendRequest(endpoint: AlbumsEndpoint.albums, responseModel: [Album].self)
     }
     
-    func fetchPhotos(albumId: Int) async throws -> Result<[Photo], RequestError> {
+    func fetchPhotos(albumId: Int16) async throws -> Result<[Photo], RequestError> {
         try await sendRequest(endpoint: AlbumsEndpoint.photos(albumId: albumId), responseModel: [Photo].self)
     }
 }

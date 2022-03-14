@@ -42,7 +42,7 @@ class AlbumsViewModel: ObservableObject {
         }
     }
     
-    func fetchPhotos(forAlbum albumId: Int) async {
+    func fetchPhotos(forAlbum albumId: Int16) async {
         do {
             let photosResult = try await albumService.fetchPhotos(albumId: albumId)
             switch photosResult {

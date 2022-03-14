@@ -9,7 +9,7 @@ import Foundation
 
 enum AlbumsEndpoint {
     case albums
-    case photos(albumId: Int)
+    case photos(albumId: Int16)
 }
 
 extension AlbumsEndpoint: Endpoint {
