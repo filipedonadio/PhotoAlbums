@@ -20,6 +20,10 @@
 		5AF9538A27DF36B000D8D1A2 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9538927DF36B000D8D1A2 /* Album.swift */; };
 		5AF9538C27DF36BC00D8D1A2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9538B27DF36BC00D8D1A2 /* Photo.swift */; };
 		5AF9538E27DF36DB00D8D1A2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9538D27DF36DB00D8D1A2 /* Endpoint.swift */; };
+		5AF9539227DF37EA00D8D1A2 /* Albums.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9539027DF37EA00D8D1A2 /* Albums.xcdatamodeld */; };
+		5AF9539527DF386500D8D1A2 /* CachedAlbum+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9539327DF386500D8D1A2 /* CachedAlbum+CoreDataClass.swift */; };
+		5AF9539627DF386500D8D1A2 /* CachedAlbum+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9539427DF386500D8D1A2 /* CachedAlbum+CoreDataProperties.swift */; };
+		5AF9539827DF390E00D8D1A2 /* AlbumsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF9539727DF390E00D8D1A2 /* AlbumsStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		5AF9538927DF36B000D8D1A2 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		5AF9538B27DF36BC00D8D1A2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		5AF9538D27DF36DB00D8D1A2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5AF9539127DF37EA00D8D1A2 /* Albums.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Albums.xcdatamodel; sourceTree = "<group>"; };
+		5AF9539327DF386500D8D1A2 /* CachedAlbum+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedAlbum+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5AF9539427DF386500D8D1A2 /* CachedAlbum+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedAlbum+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5AF9539727DF390E00D8D1A2 /* AlbumsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 			children = (
 				5AF9538827DF36A100D8D1A2 /* Models */,
 				5AF9537F27DF35EB00D8D1A2 /* Networking */,
+				5AF9538F27DF37BF00D8D1A2 /* Storage */,
 				5AF9536D27DF307C00D8D1A2 /* PhotoAlbumsApp.swift */,
 				5AF9536F27DF307C00D8D1A2 /* ContentView.swift */,
 				5AF9537B27DF34C700D8D1A2 /* AlbumsView.swift */,
@@ -108,6 +117,17 @@
 				5AF9538B27DF36BC00D8D1A2 /* Photo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5AF9538F27DF37BF00D8D1A2 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				5AF9539327DF386500D8D1A2 /* CachedAlbum+CoreDataClass.swift */,
+				5AF9539427DF386500D8D1A2 /* CachedAlbum+CoreDataProperties.swift */,
+				5AF9539727DF390E00D8D1A2 /* AlbumsStorage.swift */,
+				5AF9539027DF37EA00D8D1A2 /* Albums.xcdatamodeld */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,11 +206,15 @@
 				5AF9538727DF369400D8D1A2 /* AlbumsService.swift in Sources */,
 				5AF9538C27DF36BC00D8D1A2 /* Photo.swift in Sources */,
 				5AF9538527DF367400D8D1A2 /* HTTPClient.swift in Sources */,
+				5AF9539827DF390E00D8D1A2 /* AlbumsStorage.swift in Sources */,
 				5AF9538A27DF36B000D8D1A2 /* Album.swift in Sources */,
+				5AF9539627DF386500D8D1A2 /* CachedAlbum+CoreDataProperties.swift in Sources */,
+				5AF9539227DF37EA00D8D1A2 /* Albums.xcdatamodeld in Sources */,
 				5AF9537027DF307C00D8D1A2 /* ContentView.swift in Sources */,
 				5AF9536E27DF307C00D8D1A2 /* PhotoAlbumsApp.swift in Sources */,
 				5AF9538E27DF36DB00D8D1A2 /* Endpoint.swift in Sources */,
 				5AF9537C27DF34C700D8D1A2 /* AlbumsView.swift in Sources */,
+				5AF9539527DF386500D8D1A2 /* CachedAlbum+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +417,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5AF9539027DF37EA00D8D1A2 /* Albums.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5AF9539127DF37EA00D8D1A2 /* Albums.xcdatamodel */,
+			);
+			currentVersion = 5AF9539127DF37EA00D8D1A2 /* Albums.xcdatamodel */;
+			path = Albums.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5AF9536227DF307C00D8D1A2 /* Project object */;
 }
