@@ -35,12 +35,9 @@ struct AlbumsView: View {
                 }
             }
             .listStyle(.plain)
-            .navigationTitle("Albums")
+            .navigationTitle("Albums 📷")
         }
-        .navigationViewStyle(StackNavigationViewStyle())
-        .task {
-            await albumsViewModel.downloadAlbums()
-        }
+        .navigationViewStyle(.stack)
     }
 }
 

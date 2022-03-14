@@ -17,6 +17,14 @@ class AlbumsViewModel: ObservableObject {
     init(albumService: AlbumsService, albumStorage: AlbumsStorage) {
         self.albumService = albumService
         self.albumsStorage = albumStorage
+        
+        Task {
+            await self.downloadAlbums()
+        }
+    }
+    
+    var favorites: [CachedAlbum] {
+        albums.filter { $0.isFavorite == true }
     }
     
     func downloadAlbums() async {
@@ -24,12 +32,13 @@ class AlbumsViewModel: ObservableObject {
             let albumsResult = try await albumService.fetchAlbums()
             switch albumsResult {
             case .success(let albums):
-                for album in albums {
-                    albumsStorage.createAlbum(album: album)
-                }
-                albumsStorage.saveContext()
                 
                 await MainActor.run {
+                    for album in albums {
+                        albumsStorage.createAlbum(album: album)
+                    }
+                    
+                    albumsStorage.saveContext()
                     self.albums = albumsStorage.loadAlbums()
                 }
             case .failure(let error):

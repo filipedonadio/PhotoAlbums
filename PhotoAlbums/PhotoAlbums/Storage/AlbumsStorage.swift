@@ -23,21 +23,22 @@ class AlbumsStorage {
         }
     }
     
-    func isFavoriteAlbum(albumId: Int) -> Bool {
+    func isFavoriteAlbum(albumId: Int16) -> Bool {
+        let context = container.viewContext
         let predicate = NSPredicate(format: "id == %i && isFavorite == %d", albumId, true)
         let request: NSFetchRequest<CachedAlbum> = CachedAlbum.fetchRequest()
         request.predicate = predicate
         request.fetchLimit = 1
-        
+
         do {
-            let cachedAlbums = try container.viewContext.fetch(request)
+            let cachedAlbums = try context.fetch(request)
             if cachedAlbums.count == 1 {
                 return true
             }
         } catch {
             return false
         }
-        
+
         return false
     }
     
@@ -51,7 +52,7 @@ class AlbumsStorage {
         cachedAlbum.id = Int16(album.id)
         cachedAlbum.userId = Int16(album.userId)
         cachedAlbum.title = album.title
-        cachedAlbum.isFavorite = isFavoriteAlbum(albumId: album.id)
+        cachedAlbum.isFavorite = isFavoriteAlbum(albumId: Int16(album.id))
     }
     
     func saveContext() {
