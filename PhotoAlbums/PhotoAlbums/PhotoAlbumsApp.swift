@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PhotoAlbumsApp: App {
+    @StateObject var albumsViewModel = AlbumsViewModel(albumService: AlbumsService(), albumStorage: AlbumsStorage())
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(albumsViewModel)
         }
     }
 }
