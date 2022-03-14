@@ -2,7 +2,7 @@
 
 This is a project I recently completed as part of the interview process for an iOS Developer role. The app displays a list of photo albums and allows see the photos in each album in a separate list. It's also possible to mark an album as a favorite and it persists locally.
 
-The project uses SwiftUI, MVVM, Codable, CoreData, and the [JSONPlaceholder albums API](https://jsonplaceholder.typicode.com).
+The project uses SwiftUI, MVVM, async/await, Codable, CoreData, and the [JSONPlaceholder albums API](https://jsonplaceholder.typicode.com).
 
 ## Screenshots
 
