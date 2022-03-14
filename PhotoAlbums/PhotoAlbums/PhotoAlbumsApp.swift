@@ -15,6 +15,11 @@ struct PhotoAlbumsApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(albumsViewModel)
+                .alert("Error", isPresented: $albumsViewModel.showingError) {
+                    Button("OK") { }
+                } message: {
+                    Text("Something went wrong. Please try again later.")
+                }
         }
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 class AlbumsViewModel: ObservableObject {
     @Published var albums: [CachedAlbum] = []
     @Published var photos: [Photo] = []
+    @Published var showingError = false
     
     private let albumService: AlbumsService
     private let albumsStorage: AlbumsStorage
@@ -42,11 +43,11 @@ class AlbumsViewModel: ObservableObject {
                     self.albums = albumsStorage.loadAlbums()
                 }
             case .failure(let error):
-                // TODO: Show error warning
+                self.showingError = true
                 print("Error: \(error.localizedDescription)")
             }
         } catch {
-            // TODO: Show error warning
+            self.showingError = true
             print("Error: \(error.localizedDescription)")
         }
     }
@@ -60,11 +61,13 @@ class AlbumsViewModel: ObservableObject {
                     self.photos = photos
                 }
             case .failure(let error):
-                // TODO: Show error warning
+                await MainActor.run {
+                    self.showingError = true
+                }
                 print("Error: \(error.localizedDescription)")
             }
         } catch {
-            // TODO: Show error warning
+            self.showingError = true
             print("Error: \(error.localizedDescription)")
         }
     }
